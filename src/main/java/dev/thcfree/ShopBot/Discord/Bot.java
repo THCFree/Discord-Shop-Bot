@@ -6,6 +6,7 @@ import dev.thcfree.ShopBot.Discord.Commands.AddItemCMD;
 import dev.thcfree.ShopBot.Discord.Commands.AddItemWDesc;
 import dev.thcfree.ShopBot.Discord.Commands.DeleteItemCMD;
 import dev.thcfree.ShopBot.Discord.Commands.HelpCommand;
+import dev.thcfree.ShopBot.Listeners.MessageDeleteEventListener;
 import dev.thcfree.ShopBot.Listeners.ReactionEventListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -25,7 +26,7 @@ public class Bot {
         cmdClient.addCommand(new DeleteItemCMD());
         cmdClient.addCommand(new AddItemWDesc());
         cmdClient.addCommand(new HelpCommand());
-        return JDABuilder.createLight(Constants.Token).addEventListeners(cmdClient, new ReactionEventListener()).build();
+        return JDABuilder.createLight(Constants.Token).addEventListeners(cmdClient, new ReactionEventListener(), new MessageDeleteEventListener()).build();
 
     }
 }
