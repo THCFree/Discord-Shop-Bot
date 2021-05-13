@@ -17,7 +17,7 @@ public class HelpCommand extends Command {
             EmbedBuilder embedBuilder = new EmbedBuilder();
             embedBuilder.setTitle("Help Page:");
             embedBuilder.addField("Additem","Adds a item to the shop, \nUsage: " + Constants.Prefix + "additem <name> <price> <image url> \nAliases: ai, addi",false);
-            embedBuilder.addField("AdditemDesc","Adds a item to the shop with a description, \nUsage: " + Constants.Prefix + "additemdesc <name> <description> <price> <image url> \nAliases: aid, addid",false);
+            embedBuilder.addField("AdditemDesc","Adds a item to the shop with a description, \nUsage: " + Constants.Prefix + "additemdesc <name>;<description>;<price>;<image url> \nAliases: aid, addid",false);
             embedBuilder.addField("DeleteItem","Deletes a item from the shop, \nUsage: " + Constants.Prefix + "deleteitem <message id> \nAliases: di deli",false);
             embedBuilder.setColor(RandomColorUtil.getRandomColor());
             embedBuilder.setFooter("https://github.com/THCFree/Discord-Shop-Bot");

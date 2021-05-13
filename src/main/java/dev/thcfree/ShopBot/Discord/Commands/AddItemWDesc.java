@@ -17,7 +17,7 @@ public class AddItemWDesc extends Command {
     }
     @Override
     protected void execute(CommandEvent event) {
-        String[] args = event.getArgs().split("\\s+");
+        String[] args = event.getArgs().split(";");
 
             if(!NumberUtils.isCreatable(args[1])){
                 event.getAuthor().openPrivateChannel().queue(privateChannel -> {
@@ -27,12 +27,11 @@ public class AddItemWDesc extends Command {
             }
             EmbedBuilder itemEmbed = new EmbedBuilder();
             itemEmbed.setTitle(args[0]);
-            itemEmbed.setDescription(args[1] + Constants.Currency + "\n" +
-                    event.getArgs().replaceAll(args[0],"").replaceAll(args[1],"").replaceAll(args[2],""));
-            itemEmbed.setImage(args[2]);
+            itemEmbed.setDescription(args[1] + Constants.Currency + "\n" + args[2]);
+            itemEmbed.setImage(args[3]);
             itemEmbed.setColor(RandomColorUtil.getRandomColor());
             event.getChannel().sendMessage(itemEmbed.build()).queue(msg ->{
-                ItemManager.addItem(new Item(args[0],Double.parseDouble(args[2]),msg.getId(),event.getChannel().getId()));
+                ItemManager.addItem(new Item(args[0],Double.parseDouble(args[1]),msg.getId(),event.getChannel().getId()));
                 msg.addReaction("\uD83D\uDED2").queue();
                 msg.addReaction("❌").queue();
             });
