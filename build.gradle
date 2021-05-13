@@ -6,7 +6,7 @@ plugins {
 
 mainClassName = 'dev.thcfree.ShopBot.Main'
 
-version '1.0'
+version '1.1'
 
 sourceCompatibility = 1.8
 
@@ -26,7 +26,7 @@ dependencies {
 shadowJar {
     archiveBaseName.set('ShopBot')
     archiveClassifier.set('release')
-    archiveVersion.set('1.0')
+    archiveVersion.set('1.1')
 }
 
 compileJava.options.encoding = 'UTF-8'
