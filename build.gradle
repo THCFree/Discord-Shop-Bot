@@ -6,7 +6,7 @@ plugins {
 
 mainClassName = 'dev.thcfree.ShopBot.Main'
 
-version '1.1'
+version '1.2'
 
 sourceCompatibility = 1.8
 
@@ -21,12 +21,15 @@ dependencies {
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.11'
     compile("ch.qos.logback:logback-classic:1.2.3")
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
+    compile group: 'com.formdev', name: 'flatlaf', version: '1.1.2'
+    compile files('lib/miglayout-swing.jar')
+    compile files('lib/miglayout-core.jar')
 }
 
 shadowJar {
     archiveBaseName.set('ShopBot')
     archiveClassifier.set('release')
-    archiveVersion.set('1.1')
+    archiveVersion.set('1.2')
 }
 
 compileJava.options.encoding = 'UTF-8'

@@ -16,15 +16,15 @@ public class ConfigUtils {
 
     public static void saveConfig() throws IOException {
         JsonObject configObject = new JsonObject();
-        configObject.addProperty("Token","");
-        configObject.addProperty("GuildId","");
-        configObject.addProperty("Currency","");
-        configObject.addProperty("Prefix","!");
-        configObject.addProperty("Activity","Hey im using THCFree's shop bot!");
-        configObject.addProperty("OwnerId","");
-        configObject.addProperty("ShopRole","");
-        configObject.addProperty("MinPurchase","5");
-        configObject.addProperty("MentionRole","true");
+        configObject.addProperty("Token",Constants.Token);
+        configObject.addProperty("GuildId",Constants.GUID);
+        configObject.addProperty("Currency",Constants.Currency);
+        configObject.addProperty("Prefix",Constants.Prefix);
+        configObject.addProperty("Activity",Constants.Activity);
+        configObject.addProperty("OwnerId",Constants.OwnerID);
+        configObject.addProperty("ShopRole",Constants.ShopRole);
+        configObject.addProperty("MinPurchase",Constants.MinPurchase);
+        configObject.addProperty("MentionRole",Constants.MentionRole);
         OutputStreamWriter fileOutputStreamWriter = new OutputStreamWriter(new FileOutputStream(configFile));
         fileOutputStreamWriter.write(gson.toJson(configObject));
         fileOutputStreamWriter.flush();
