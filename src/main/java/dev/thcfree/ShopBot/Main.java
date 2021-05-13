@@ -11,14 +11,13 @@ import java.sql.SQLException;
 public class Main {
     public static JDA jda;
 public static void main(String[] args) {
-
+    ConfigUtils.init();
     try {
-        ConfigUtils.init();
         jda = Bot.init();
-        SqliteUtil.createTable();
-        SqliteUtil.registerItems();
     } catch (LoginException e) {
         e.printStackTrace();
     }
+    SqliteUtil.createTable();
+    SqliteUtil.registerItems();
 }
 }
