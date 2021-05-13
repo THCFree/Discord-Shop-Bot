@@ -23,4 +23,10 @@ dependencies {
     compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.34.0'
 }
 
+shadowJar {
+    archiveBaseName.set('ShopBot')
+    archiveClassifier.set('release')
+    archiveVersion.set('1.0')
+}
+
 compileJava.options.encoding = 'UTF-8'
