@@ -19,6 +19,9 @@ public class TicketUtil {
                     category.createTextChannel("Ticket-" + formName).queue(ticket -> {
                         ticket.createPermissionOverride(member).setAllow(Permission.MESSAGE_WRITE, Permission.MESSAGE_READ, Permission.MESSAGE_ADD_REACTION, Permission.MESSAGE_EXT_EMOJI).queue();
                         ticket.sendMessage(user.getAsMention()).queue();
+                        if(Constants.MentionRole){
+                            ticket.sendMessage(guild.getRolesByName(Constants.ShopRole,true).get(0).getAsMention()).queue();
+                        }
                         EmbedBuilder embed = new EmbedBuilder();
                         embed.setTitle(user.getName() + "'s" + " order:");
                         embed.setDescription(ShoppingCartUtil.ticketMap.get(user.getId()));

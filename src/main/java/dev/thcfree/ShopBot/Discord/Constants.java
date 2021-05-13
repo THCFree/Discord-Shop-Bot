@@ -14,4 +14,5 @@ public class Constants {
     //Shop config
     public static String Currency;
     public static Double MinPurchase;
+    public static Boolean MentionRole;
 }
