@@ -24,7 +24,7 @@ public class ConfigUtils {
         configObject.addProperty("OwnerId","");
         configObject.addProperty("ShopRole","");
         configObject.addProperty("MinPurchase","5");
-        configObject.addProperty("MentionRole","5");
+        configObject.addProperty("MentionRole","true");
         OutputStreamWriter fileOutputStreamWriter = new OutputStreamWriter(new FileOutputStream(configFile));
         fileOutputStreamWriter.write(gson.toJson(configObject));
         fileOutputStreamWriter.flush();
