@@ -12,9 +12,7 @@ import javax.security.auth.login.LoginException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Objects;
@@ -36,8 +34,6 @@ public class Main {
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.add(ui);
             frame.setTitle("Discord Shop Bot V" + Constants.Version);
-            File file = new File(Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("icon.png")).getFile());
-            frame.setIconImage(ImageIO.read(file));
             frame.setVisible(true);
         }
     }

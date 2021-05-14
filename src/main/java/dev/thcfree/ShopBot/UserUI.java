@@ -84,20 +84,20 @@ public class UserUI extends JPanel {
 
         //======== this ========
         setLayout(new MigLayout(
-                "fillx,hidemode 3,align center top",
-                // columns
-                "[fill]",
-                // rows
-                "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]" +
-                        "[]"));
+            "fillx,hidemode 3,align center top",
+            // columns
+            "[fill]",
+            // rows
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]" +
+            "[]"));
 
         //---- Title ----
         Title.setText("Discord Shop Bot");

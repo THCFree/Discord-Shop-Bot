@@ -5,6 +5,8 @@ import dev.thcfree.ShopBot.Main;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.User;
+
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +60,7 @@ public class ShoppingCartUtil {
                         finalTicket.append(entry.getKey().getName()).append(" x ").append(entry.getValue()).append(" = ").append(entry.getKey().getPrice()* entry.getValue()).append(Constants.Currency).append("\n");
                         total = total + ((entry.getKey().getPrice())* entry.getValue());
                 }
-                message.append("The total is: ").append(total).append(Constants.Currency).append("\n") ;
+                message.append("The total is: ").append(new DecimalFormat("#.##").format(total)).append(Constants.Currency).append("\n") ;
                 message.append("--------------------------------------------------------------");
                 message.append("\n");
                 message.append("\n");
@@ -67,7 +69,7 @@ public class ShoppingCartUtil {
                 ticket.setTitle("Ticket for " + member.getEffectiveName());
                 ticket.setColor(RandomColorUtil.getRandomColor());
                 ticket.setDescription(message.toString());
-                finalTicket.append("The total is: ").append(total).append(Constants.Currency).append("\n") ;
+                finalTicket.append("The total is: ").append(new DecimalFormat("#.##").format(total)).append(Constants.Currency).append("\n") ;
                 finalTicket.append("--------------------------------------------------------------");
                 finalTicket.append("\n");
                 finalTicket.append("\n");
