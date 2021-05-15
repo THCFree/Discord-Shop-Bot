@@ -49,12 +49,12 @@ public class UserUI extends JPanel {
 
     private void StopButtonActionPerformed(ActionEvent e) {
         Main.stopBot();
-        StatusLabel.setText("<html>Status: <font color='red'>Not Running</font></html>");
+        StatusLabel.setText(Constants.Running ? "<html>Status: <font color='green'>Running</font></html>" : "<html>Status: <font color='red'>Not Running</font></html>");
     }
 
     private void StartButtonActionPerformed(ActionEvent e) {
         Main.startBot();
-        StatusLabel.setText("<html>Status: <font color='green'>Running</font></html>");
+        StatusLabel.setText(Constants.Running ? "<html>Status: <font color='green'>Running</font></html>" : "<html>Status: <font color='red'>Not Running</font></html>");
     }
 
     private void initComponents() {
