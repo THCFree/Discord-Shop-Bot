@@ -48,11 +48,12 @@ public class ReactionEventListener extends ListenerAdapter {
         }else if(event.getChannelType().equals(ChannelType.PRIVATE)){
             if (!event.getUser().isBot()) {
                 if(event.getReaction().getReactionEmote().isEmoji()){
-                    if(event.getReaction().getReactionEmote().getEmoji().equals("✔")){
+                    if(event.getReaction().getReactionEmote().getEmoji().equals("\uD83D\uDED2")){
                         if(ShoppingCartUtil.getTotal(event.getUser()) <= Constants.MinPurchase){
                             event.getPrivateChannel().retrieveMessageById(event.getMessageId()).queue(msg -> {
                                 msg.delete().queue();
                             });
+                            event.getPrivateChannel().sendMessage("Generating ticket...").queue();
                             event.getPrivateChannel().sendMessage("Your order is under the minimum required purchase of " + Constants.MinPurchase + Constants.Currency).queue();
                             ShoppingCartUtil.createTicket(event.getUserId());
                         }else {

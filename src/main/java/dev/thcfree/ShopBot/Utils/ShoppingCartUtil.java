@@ -64,7 +64,7 @@ public class ShoppingCartUtil {
                 message.append("--------------------------------------------------------------");
                 message.append("\n");
                 message.append("\n");
-                message.append("React with ✔ to confirm the order and create a ticket \n React with ❌ to cancel the order");
+                message.append("React with \uD83D\uDED2 to confirm the order and create a ticket \n React with ❌ to cancel the order");
                 EmbedBuilder ticket = new EmbedBuilder();
                 ticket.setTitle("Ticket for " + member.getEffectiveName());
                 ticket.setColor(RandomColorUtil.getRandomColor());
@@ -85,7 +85,7 @@ public class ShoppingCartUtil {
                         }
                             });
                             privateChannel.sendMessage(ticket.build()).queue(message1 -> {
-                                message1.addReaction("✔").queue();
+                                message1.addReaction("\uD83D\uDED2").queue();
                                 message1.addReaction("❌").queue();
                             });
             });
